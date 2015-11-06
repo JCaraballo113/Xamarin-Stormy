@@ -45,7 +45,46 @@ namespace Stormy
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int clear_day = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int clear_night = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int cloudy = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int cloudy_night = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int degree = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int fog = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int Icon = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int partly_cloudy = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int rain = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int refresh = 2130837513;
+			
+			// aapt resource value: 0x7f02000a
+			public const int sleet = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int snow = 2130837515;
+			
+			// aapt resource value: 0x7f02000c
+			public const int sunny = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int wind = 2130837517;
 			
 			static Drawable()
 			{
@@ -61,7 +100,22 @@ namespace Stormy
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int hello = 2131034112;
+			public const int bg = 2131034112;
+			
+			// aapt resource value: 0x7f050002
+			public const int degreeImage = 2131034114;
+			
+			// aapt resource value: 0x7f050005
+			public const int imageView1 = 2131034117;
+			
+			// aapt resource value: 0x7f050004
+			public const int locationLabel = 2131034116;
+			
+			// aapt resource value: 0x7f050001
+			public const int temperatureLabel = 2131034113;
+			
+			// aapt resource value: 0x7f050003
+			public const int timeLabel = 2131034115;
 			
 			static Id()
 			{

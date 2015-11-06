@@ -18,9 +18,7 @@ namespace Stormy
 			AlertDialog.Builder builder = new AlertDialog.Builder (context)
 				.SetTitle ("Oops sorry!")
 				.SetMessage ("Something has gone wrong!")
-				.SetPositiveButton("OK",delegate {
-					
-				});
+				.SetPositiveButton("OK",delegate {});
 
 			AlertDialog dialog = builder.Create ();
 

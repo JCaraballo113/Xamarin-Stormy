@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/bg"
+    p1:background="#fffc970b">
+    <TextView xmlns:tools="http://schemas.android.com/tools"
+        p1:text="100"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/temperatureLabel"
+        p1:layout_centerHorizontal="true"
+        p1:layout_centerVertical="true"
+        p1:textColor="#ffffffff"
+        p1:textSize="150sp" />
+    <ImageView
+        p1:src="@drawable/degree"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_alignTop="@id/temperatureLabel"
+        p1:id="@+id/degreeImage"
+        p1:layout_toRightOf="@id/temperatureLabel"
+        p1:layout_toEndOf="@id/temperatureLabel" />
     <TextView
-        android:text="Hello World!"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/hello" />
-</LinearLayout>
+        p1:text="At 5:00 PM it will be"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_above="@id/temperatureLabel"
+        p1:id="@+id/timeLabel"
+        p1:layout_centerHorizontal="true"
+        p1:textSize="18sp"
+        p1:textColor="#80ffffff" />
+    <TextView xmlns:tools="http://schemas.android.com/tools"
+        p1:text="Alcatraz Island, CA"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_above="@id/timeLabel"
+        p1:id="@+id/locationLabel"
+        p1:layout_centerHorizontal="true"
+        p1:textColor="#ffffffff"
+        p1:textSize="24sp"
+        p1:layout_marginBottom="60dp" />
+    <ImageView
+        p1:src="@drawable/cloudy_night"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_alignParentStart="true"
+        p1:layout_alignParentLeft="true"
+        p1:layout_alignBottom="@id/locationLabel"
+        p1:id="@+id/imageView1"
+        p1:layout_marginLeft="32dp" />
+</RelativeLayout>

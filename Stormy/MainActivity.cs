@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Linq;
 
 using Android.App;
 using Android.Content;
@@ -36,8 +37,8 @@ namespace Stormy
 
 				call.Enqueue (
 					response => {
-						string body = response.Body ().String ();
-						Console.WriteLine (body);
+						var jsonData = JObject.Parse(response.Body().String());
+						getCurrentDetails(jsonData);
 					}, (req, exception) => {
 						ShowError();
 				}
@@ -65,6 +66,19 @@ namespace Stormy
 			}
 
 			return isAvailable;
+		}
+
+		private void getCurrentDetails(JObject jsonData) {
+			string timezone = (string)jsonData ["timezone"];
+			JObject currentDetails = JObject.FromObject (jsonData ["currently"]);
+			CurrentWeather currentWeather= new CurrentWeather();
+			currentWeather.Humidity = (double)currentDetails ["humidity"];
+			currentWeather.Time = (long)currentDetails ["time"];
+			currentWeather.Icon = (string)currentDetails ["icon"];
+			currentWeather.PrecipChance = (double)currentDetails ["precipProbability"];
+			currentWeather.Summary = (string)currentDetails ["summary"];
+			currentWeather.Temperature = (double)currentDetails ["temperature"];
+			currentWeather.TimeZone = timezone;
 		}
 	}
 }

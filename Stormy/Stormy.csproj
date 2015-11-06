@@ -48,12 +48,16 @@
     <Reference Include="Square.OkHttp">
       <HintPath>..\packages\Square.OkHttp.2.5.0.0\lib\MonoAndroid\Square.OkHttp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\AlertDialogFragment.cs" />
+    <Compile Include="src\CurrentWeather.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -64,11 +68,76 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\clear_day.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\clear_night.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudy_night.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\degree.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fog.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\partly_cloudy.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sleet.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\snow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sunny.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\wind.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\clear_day.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\clear_night.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudy_night.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\degree.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\fog.png" />
     <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\partly_cloudy.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sleet.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\snow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sunny.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\clear_day.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\clear_night.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudy_night.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\degree.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\fog.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\partly_cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sleet.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\snow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sunny.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\clear_day.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\clear_night.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudy_night.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\degree.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\fog.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\partly_cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sleet.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\snow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sunny.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\clear_day.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\clear_night.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudy_night.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\degree.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\fog.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\partly_cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\refresh.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sleet.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\snow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sunny.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\wind.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -76,8 +145,16 @@
       <Version>2.4.0.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="json.net">
+      <Version>7.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
 </Project>
