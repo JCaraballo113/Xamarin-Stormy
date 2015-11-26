@@ -1,4 +1,12 @@
 ﻿using System;
+using Android.App;
+using Android.Content;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
+using Android.Util;
+using Android.Net;
 
 namespace Stormy
 {
@@ -11,9 +19,11 @@ namespace Stormy
 		private double mPrecipChance;
 		private string mSummary;
 		private string mTimeZone;
+		private Activity activity;
 
-		public CurrentWeather ()
+		public CurrentWeather (Activity mainActivity)
 		{
+			activity = mainActivity;
 		}
 
 		public string Icon {
@@ -36,7 +46,7 @@ namespace Stormy
 
 		public double Temperature {
 			get {
-				return this.mTemperature;
+				return (int)Math.Round (mTemperature);
 			}
 			set {
 				mTemperature = value;
@@ -54,7 +64,8 @@ namespace Stormy
 
 		public double PrecipChance {
 			get {
-				return this.mPrecipChance;
+				double precipPercentage = this.mPrecipChance * 100;
+				return (int)Math.Round (precipPercentage);
 			}
 			set {
 				mPrecipChance = value;
@@ -91,6 +102,43 @@ namespace Stormy
 			DateTime finalDate = TimeZoneInfo.ConvertTimeFromUtc (start, timeInfo);
 			//Format it to your needs( tt stands for AM/PM) and return it
 			return finalDate.ToString ("h:mm tt");
+		}
+
+		public int getIconId () {
+			int iconId = activity.Resources.GetIdentifier("clear_day","drawable", activity.ApplicationContext.PackageName);
+
+			if (mIcon.Equals("clear-day")) {
+				iconId = activity.Resources.GetIdentifier("clear_day","drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("clear-night")) {
+				iconId = iconId = activity.Resources.GetIdentifier("clear_night", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("rain")) {
+				iconId = activity.Resources.GetIdentifier("rain", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("snow")) {
+				iconId = activity.Resources.GetIdentifier("snow", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("sleet")) {
+						iconId = activity.Resources.GetIdentifier("sleet", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("wind")) {
+						iconId = activity.Resources.GetIdentifier("wind", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("fog")) {
+						iconId = activity.Resources.GetIdentifier("fog", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("cloudy")) {
+						iconId = activity.Resources.GetIdentifier("cloudy", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("partly-cloudy-day")) {
+						iconId = activity.Resources.GetIdentifier("partly_cloudy", "drawable", activity.ApplicationContext.PackageName);
+			}
+			else if (mIcon.Equals("partly-cloudy-night")) {
+						iconId = activity.Resources.GetIdentifier("cloudy_night", "drawable", activity.ApplicationContext.PackageName);
+			}
+
+			return iconId;
 		}
 	}
 }

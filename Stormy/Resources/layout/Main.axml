@@ -47,6 +47,92 @@
         p1:layout_alignParentStart="true"
         p1:layout_alignParentLeft="true"
         p1:layout_alignBottom="@id/locationLabel"
-        p1:id="@+id/imageView1"
+        p1:id="@+id/weatherIcon"
         p1:layout_marginLeft="32dp" />
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:layout_below="@id/temperatureLabel"
+        p1:layout_centerHorizontal="true"
+        p1:id="@+id/linearLayout1"
+        p1:layout_marginTop="10dp"
+        p1:weightSum="100">
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/linearLayout2"
+            p1:layout_weight="50">
+            <TextView xmlns:tools="http://schemas.android.com/tools"
+                p1:text="HUMIDITY"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/humidityLabel"
+                p1:gravity="center_horizontal"
+                p1:textColor="#80ffffff"
+                tools:text="HUMIDITY" />
+            <TextView
+                p1:text="--"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/humidityValue"
+                p1:gravity="center_horizontal"
+                p1:textColor="#ffffffff"
+                p1:textSize="24sp" />
+        </LinearLayout>
+        <LinearLayout
+            p1:orientation="vertical"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="wrap_content"
+            p1:layout_height="match_parent"
+            p1:id="@+id/linearLayout3"
+            p1:layout_weight="50">
+            <TextView
+                p1:text="RAIN/SNOW?"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/precipLabel"
+                p1:textColor="#80ffffff"
+                p1:gravity="center_horizontal" />
+            <TextView
+                p1:text="--"
+                p1:layout_width="match_parent"
+                p1:layout_height="wrap_content"
+                p1:id="@+id/precipValue"
+                p1:gravity="center_horizontal"
+                p1:textSize="24sp"
+                p1:textColor="#ffffffff" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        p1:src="@drawable/refresh"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/refreshIcon"
+        p1:layout_centerHorizontal="true"
+        p1:layout_above="@id/locationLabel"
+        p1:layout_marginBottom="10dp" />
+    <ProgressBar
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/progressBar"
+        p1:layout_alignParentTop="true"
+        p1:layout_centerHorizontal="true"
+        p1:layout_alignBottom="@id/refreshIcon" />
+    <TextView
+        p1:text="Getting Current Weather..."
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/summaryLabel"
+        p1:layout_below="@id/linearLayout1"
+        p1:layout_centerHorizontal="true"
+        p1:layout_marginTop="40dp"
+        p1:textSize="18dp"
+        p1:textColor="#ffffffff" />
 </RelativeLayout>
